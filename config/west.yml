@@ -25,12 +25,15 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      # url-base: https://github.com/zmkfirmware
+      url-base: https://github.com/darknao/
+
 
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+      revision: rgb-layer-24.12
 
     # ZMK modules
     - name: zmk-adaptive-key

@@ -1,6 +1,8 @@
 .build
 .direnv
 .west
+.idea
+glove80-zmk-config-main/
 modules
 firmware
 zephyr
