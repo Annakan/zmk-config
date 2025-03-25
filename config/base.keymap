@@ -195,6 +195,41 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
+// QWERTY Morphs
+
+// Tap: semicolon | Shift + tap: colon
+SIMPLE_MORPH(q_scol_col, SFT, &kp SEMICOLON, &kp COLON)
+
+// Tap: ' | Shift + tap: "
+SIMPLE_MORPH(q_quote_sqt, SFT, &kp SQT,  &kp DOT )
+
+// Tap: , | Shift + tap: <
+SIMPLE_MORPH(q_comma_lt, SFT, &kp COMMA,  &kp LESS_THAN )
+
+// Tap: . | Shift + tap: >
+SIMPLE_MORPH(q_dot_gt, SFT, &kp DOT,  &kp GREATER_THAN )
+
+// Tap: ~ | Shift + tap: `
+SIMPLE_MORPH(q_grave_tilde, SFT, &kp TILDE,  &kp GRAVE )
+
+// Tap: slash / | Shift + tap: ?
+SIMPLE_MORPH(q_slash_qmark, SFT, &kp FSLH,  &kp QMARK )
+
+// Tap: slash - | Shift + tap: _
+SIMPLE_MORPH(q_minus_unders, SFT, &kp MINUS,  &kp UNDER )
+
+// Tap: slash \ | Shift + tap: |
+SIMPLE_MORPH(q_rslsh_pipe, SFT, &kp BSLH,  &kp PIPE )
+
+// Tap: slash = | Shift + tap: +
+SIMPLE_MORPH(q_eql_plus, SFT, &kp EQUAL,  &kp PLUS )
+
+// Tap: slash [ | Shift + tap: {
+SIMPLE_MORPH(q_lbkt_lcbkt, SFT, &kp LBRC,  &kp LBKT )
+
+// Tap: slash = ] Shift + tap: }
+SIMPLE_MORPH(q_rbkt_rcbkt, SFT, &kp RBRC,  &kp RBKT )
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
