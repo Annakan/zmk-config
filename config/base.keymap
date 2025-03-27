@@ -14,10 +14,12 @@
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
-#define XXX &none
-#define ___ &trans
 
 /* Global defaults */
+
+
+#define XXX &none
+#define ___ &trans
 
 #define DEF 0
 #define QWERTY 0
@@ -27,10 +29,10 @@
 #define NUM 4
 #define MOUSE 5
 #define SYS 6
-#define OSTOG 7
-#define LINACC 7
-#define WMACC 7
-#define SYMBOL 7
+#define OSTOGL 7
+#define LINACC 8
+#define WMACC 9
+#define SYMBOL 10
 
 
 #define QUICK_TAP_MS 175
@@ -268,12 +270,30 @@ SIMPLE_MORPH(q_lbkt_lcbkt, SFT, &kp LBRC,  &kp LBKT )
 // Tap: slash = ] Shift + tap: }
 SIMPLE_MORPH(q_rbkt_rcbkt, SFT, &kp RBRC,  &kp RBKT )
 
+
+// Ergo-L Morphs et co
+
+#define Q_DEAD_KEY &q_deadk LINACC  0
+SIMPLE_MORPH(q_deadk_excl, SFT, &sl LINACC, &kp EXCL)
+// Tap: ergo dead-key | Shift + dead=key: ! | Hold: dead-key layer.
+ZMK_HOLD_TAP(q_deadk, bindings = <&mo>, <&q_deadk_excl>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
+
+// Unicode
+
+//ZMK_UNICODE_PAIR( de_ae,   N0, N0,  E, N4,   N0, N0,  C, N4 )
+ZMK_UNICODE_PAIR( de_oe,   N0, N0,  F, N6,   N0, N0,  D, N6 )
+ZMK_UNICODE_PAIR( de_ue,   N0, N0,  F,  C,   N0, N0,  D,  C )
+
+ZMK_UNICODE_PAIR_AOS(de_ae,   N0, N0,  E, N4,   N0, N0,  C, N4 )
+
 /* Keymap */
 
-ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
+//ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 
 //#ifndef ZMK_BASE_LAYER
-//  #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
+//  #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)      \
 //      ZMK_LAYER(name, LT RT LM RM LB RB LH RH)
 //#endif
 
