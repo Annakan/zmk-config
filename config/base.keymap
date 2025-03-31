@@ -282,11 +282,61 @@ ZMK_HOLD_TAP(q_deadk, bindings = <&mo>, <&q_deadk_excl>; flavor = "balanced";
 
 // Unicode
 
-//ZMK_UNICODE_PAIR( de_ae,   N0, N0,  E, N4,   N0, N0,  C, N4 )
-ZMK_UNICODE_PAIR( de_oe,   N0, N0,  F, N6,   N0, N0,  D, N6 )
-ZMK_UNICODE_PAIR( de_ue,   N0, N0,  F,  C,   N0, N0,  D,  C )
+// NOTE : You can't use unicode inside the keymap files !!!!
 
-ZMK_UNICODE_PAIR_AOS(de_ae,   N0, N0,  E, N4,   N0, N0,  C, N4 )
+ZMK_UNICODE_SINGLE_AOS(left_doubl_angle , N0 , N0 , A , B) //«  |  wm_left_doubl_angle lin_left_doubl_angle LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+ZMK_UNICODE_SINGLE_AOS(right_doubl_angle , N0 , N0 , B , B) //»  |  wm_right_doubl_angle lin_right_doubl_angle RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+ZMK_UNICODE_SINGLE_AOS(doubl_low_9 , N2 , N0 , N1 , E) //„  |  wm_doubl_low_9 lin_doubl_low_9 DOUBLE LOW-9 QUOTATION MARK
+ZMK_UNICODE_SINGLE_AOS(euro_sign , N2 , N0 , A , C) //€  |  wm_euro_sign lin_euro_sign EURO SIGN
+ZMK_UNICODE_PAIR_AOS(a_grave , N0 , N0 , E , N0 , N0 , N0 , C , N0) //à À |  wm_a_grave lin_a_grave LATIN SMALL LETTER A WITH GRAVE
+ZMK_UNICODE_PAIR_AOS(e_grave , N0 , N0 , E , N8 , N0 , N0 , C , N8) //è È |  wm_e_grave lin_e_grave LATIN SMALL LETTER E WITH GRAVE
+ZMK_UNICODE_PAIR_AOS(u_grave , N0 , N0 , F , N9 , N0 , N0 , D , N9) //ù Ù |  wm_u_grave lin_u_grave LATIN SMALL LETTER U WITH GRAVE
+ZMK_UNICODE_PAIR_AOS(c_cedil , N0 , N0 , E , N7 , N0 , N0 , C , N7) //ç Ç |  wm_c_cedil lin_c_cedil LATIN SMALL LETTER C WITH CEDILLA
+ZMK_UNICODE_PAIR_AOS(ligat_oe , N0 , N1 , N5 , N3 , N0 , N1 , N5 , N2) //œ Œ |  wm_ligat_oe lin_ligat_oe LATIN SMALL LIGATURE OE
+ZMK_UNICODE_PAIR_AOS(e_acute , N0 , N0 , E , N9 , N0 , N0 , C , N9) //é É |  wm_e_acute lin_e_acute LATIN SMALL LETTER E WITH ACUTE
+ZMK_UNICODE_PAIR_AOS(a_circu , N0 , N0 , E , N2 , N0 , N0 , C , N2) //â Â |  wm_a_circu lin_a_circu LATIN SMALL LETTER A WITH CIRCUMFLEX
+ZMK_UNICODE_PAIR_AOS(e_circu , N0 , N0 , E , A , N0 , N0 , C , A) //ê Ê |  wm_e_circu lin_e_circu LATIN SMALL LETTER E WITH CIRCUMFLEX
+ZMK_UNICODE_PAIR_AOS(i_circu , N0 , N0 , E , E , N0 , N0 , C , E) //î Î |  wm_i_circu lin_i_circu LATIN SMALL LETTER I WITH CIRCUMFLEX
+ZMK_UNICODE_PAIR_AOS(o_circu , N0 , N0 , F , N4 , N0 , N0 , D , N4) //ô Ô |  wm_o_circu lin_o_circu LATIN SMALL LETTER O WITH CIRCUMFLEX
+ZMK_UNICODE_PAIR_AOS(u_circu , N0 , N0 , F , B , N0 , N0 , D , B) //û Û |  wm_u_circu lin_u_circu LATIN SMALL LETTER U WITH CIRCUMFLEX
+ZMK_UNICODE_PAIR_AOS(ae , N0 , N0 , E , N6 , N0 , N0 , C , N6) //æ Æ |  wm_ae lin_ae LATIN SMALL LETTER AE
+ZMK_UNICODE_PAIR_AOS(micro_sign , N0 , N0 , B , N5 , N0 , N3 , N9 , C) //µ Μ |  wm_micro_sign lin_micro_sign MICRO SIGN
+UC_MACRO_AOS(sharp_s_lower, &kp N0 &kp N0 &kp D &kp F)
+UC_MODMORPH(wm_sharp_s, &wm_sharp_s_lower, &kp S &kp S)
+UC_MODMORPH(lin_sharp_s, &lin_sharp_s_lower, &kp S &kp S) //ß  |  wm_sharp_s lin_sharp_s LATIN SMALL LETTER SHARP S
+ZMK_UNICODE_PAIR_AOS(n_tilde , N0 , N0 , F , N1 , N0 , N0 , D , N1) //ñ Ñ |  wm_n_tilde lin_n_tilde LATIN SMALL LETTER N WITH TILDE
+ZMK_UNICODE_PAIR_AOS(a_diaer , N0 , N0 , E , N4 , N0 , N0 , C , N4) //ä Ä |  wm_a_diaer lin_a_diaer LATIN SMALL LETTER A WITH DIAERESIS
+ZMK_UNICODE_PAIR_AOS(e_diaer , N0 , N0 , E , B , N0 , N0 , C , B) //ë Ë |  wm_e_diaer lin_e_diaer LATIN SMALL LETTER E WITH DIAERESIS
+ZMK_UNICODE_PAIR_AOS(i_diaer , N0 , N0 , E , F , N0 , N0 , C , F) //ï Ï |  wm_i_diaer lin_i_diaer LATIN SMALL LETTER I WITH DIAERESIS
+ZMK_UNICODE_PAIR_AOS(o_diaer , N0 , N0 , F , N6 , N0 , N0 , D , N6) //ö Ö |  wm_o_diaer lin_o_diaer LATIN SMALL LETTER O WITH DIAERESIS
+ZMK_UNICODE_PAIR_AOS(u_diaer , N0 , N0 , F , C , N0 , N0 , D , C) //ü Ü |  wm_u_diaer lin_u_diaer LATIN SMALL LETTER U WITH DIAERESIS
+ZMK_UNICODE_PAIR_AOS(y_diaer , N0 , N0 , F , F , N0 , N1 , N7 , N8) //ÿ Ÿ |  wm_y_diaer lin_y_diaer LATIN SMALL LETTER Y WITH DIAERESIS
+ZMK_UNICODE_SINGLE_AOS(horiz_ellip , N2 , N0 , N2 , N6) //…  |  wm_horiz_ellip lin_horiz_ellip HORIZONTAL ELLIPSIS
+ZMK_UNICODE_SINGLE_AOS(verti_horiz_ellip , F , E , N1 , N9) //︙  |  wm_verti_horiz_ellip lin_verti_horiz_ellip PRESENTATION FORM FOR VERTICAL HORIZONTAL ELLIPSIS
+ZMK_UNICODE_PAIR_AOS(alpha , N0 , N3 , B , N1 , N0 , N3 , N9 , N1) //α Α |  wm_alpha lin_alpha GREEK SMALL LETTER ALPHA
+ZMK_UNICODE_PAIR_AOS(beta , N0 , N3 , B , N2 , N0 , N3 , N9 , N2) //β Β |  wm_beta lin_beta GREEK SMALL LETTER BETA
+ZMK_UNICODE_PAIR_AOS(gamma , N0 , N3 , B , N3 , N0 , N3 , N9 , N3) //γ Γ |  wm_gamma lin_gamma GREEK SMALL LETTER GAMMA
+ZMK_UNICODE_PAIR_AOS(delta , N0 , N3 , B , N4 , N0 , N3 , N9 , N4) //δ Δ |  wm_delta lin_delta GREEK SMALL LETTER DELTA
+ZMK_UNICODE_PAIR_AOS(epsil , N0 , N3 , B , N5 , N0 , N3 , N9 , N5) //ε Ε |  wm_epsil lin_epsil GREEK SMALL LETTER EPSILON
+ZMK_UNICODE_PAIR_AOS(zeta , N0 , N3 , B , N6 , N0 , N3 , N9 , N6) //ζ Ζ |  wm_zeta lin_zeta GREEK SMALL LETTER ZETA
+ZMK_UNICODE_PAIR_AOS(eta , N0 , N3 , B , N7 , N0 , N3 , N9 , N7) //η Η |  wm_eta lin_eta GREEK SMALL LETTER ETA
+ZMK_UNICODE_PAIR_AOS(theta , N0 , N3 , B , N8 , N0 , N3 , N9 , N8) //θ Θ |  wm_theta lin_theta GREEK SMALL LETTER THETA
+ZMK_UNICODE_PAIR_AOS(iota , N0 , N3 , B , N9 , N0 , N3 , N9 , N9) //ι Ι |  wm_iota lin_iota GREEK SMALL LETTER IOTA
+ZMK_UNICODE_PAIR_AOS(kappa , N0 , N3 , B , A , N0 , N3 , N9 , A) //κ Κ |  wm_kappa lin_kappa GREEK SMALL LETTER KAPPA
+ZMK_UNICODE_PAIR_AOS(lamda , N0 , N3 , B , B , N0 , N3 , N9 , B) //λ Λ |  wm_lamda lin_lamda GREEK SMALL LETTER LAMDA
+ZMK_UNICODE_PAIR_AOS(mu , N0 , N3 , B , C , N0 , N3 , N9 , C) //μ Μ |  wm_mu lin_mu GREEK SMALL LETTER MU
+ZMK_UNICODE_PAIR_AOS(nu , N0 , N3 , B , D , N0 , N3 , N9 , D) //ν Ν |  wm_nu lin_nu GREEK SMALL LETTER NU
+ZMK_UNICODE_PAIR_AOS(xi , N0 , N3 , B , E , N0 , N3 , N9 , E) //ξ Ξ |  wm_xi lin_xi GREEK SMALL LETTER XI
+ZMK_UNICODE_PAIR_AOS(omicr , N0 , N3 , B , F , N0 , N3 , N9 , F) //ο Ο |  wm_omicr lin_omicr GREEK SMALL LETTER OMICRON
+ZMK_UNICODE_PAIR_AOS(pi , N0 , N3 , C , N0 , N0 , N3 , A , N0) //π Π |  wm_pi lin_pi GREEK SMALL LETTER PI
+ZMK_UNICODE_PAIR_AOS(rho , N0 , N3 , C , N1 , N0 , N3 , A , N1) //ρ Ρ |  wm_rho lin_rho GREEK SMALL LETTER RHO
+ZMK_UNICODE_PAIR_AOS(sigma , N0 , N3 , C , N3 , N0 , N3 , A , N3) //σ Σ |  wm_sigma lin_sigma GREEK SMALL LETTER SIGMA
+ZMK_UNICODE_PAIR_AOS(tau , N0 , N3 , C , N4 , N0 , N3 , A , N4) //τ Τ |  wm_tau lin_tau GREEK SMALL LETTER TAU
+ZMK_UNICODE_PAIR_AOS(upsil , N0 , N3 , C , N5 , N0 , N3 , A , N5) //υ Υ |  wm_upsil lin_upsil GREEK SMALL LETTER UPSILON
+ZMK_UNICODE_PAIR_AOS(phi , N0 , N3 , C , N6 , N0 , N3 , A , N6) //φ Φ |  wm_phi lin_phi GREEK SMALL LETTER PHI
+ZMK_UNICODE_PAIR_AOS(chi , N0 , N3 , C , N7 , N0 , N3 , A , N7) //χ Χ |  wm_chi lin_chi GREEK SMALL LETTER CHI
+ZMK_UNICODE_PAIR_AOS(psi , N0 , N3 , C , N8 , N0 , N3 , A , N8) //ψ Ψ |  wm_psi lin_psi GREEK SMALL LETTER PSI
+ZMK_UNICODE_PAIR_AOS(omega , N0 , N3 , C , N9 , N0 , N3 , A , N9) //ω Ω |  wm_omega lin_omega GREEK SMALL LETTER OMEGA
 
 /* Keymap */
 
