@@ -280,6 +280,8 @@ ZMK_HOLD_TAP(q_deadk, bindings = <&mo>, <&q_deadk_excl>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
 
+ZMK_CONDITIONAL_LAYER(acc, ErgoL OSTOGL LINACC, WMACC)
+
 // Unicode
 
 // NOTE : You can't use unicode inside the keymap files !!!!
