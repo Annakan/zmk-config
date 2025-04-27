@@ -18,8 +18,9 @@
 ---
 manifest:
   defaults:
-    remote: urob
-    revision: v0.2 # Pin everything to v0.2
+#    remote: zmkfirmware
+     remote: urob
+#    revision: v0.2 # Pin everything to v0.2
 
   remotes:
     - name: urob
@@ -28,7 +29,7 @@ manifest:
       # url-base: https://github.com/zmkfirmware
       url-base: https://github.com/darknao/
     - name : home
-      url-base: https://github.com/Annakan/
+      url-base: git@github.com:Annakan/zmk.git
 
 
   projects:
@@ -51,21 +52,22 @@ manifest:
     - name: zmk-tri-state
       path: modules/zmk/tri-state
 
-    # Temporarily overload Zephyr until
-    # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
-    - name: zephyr
-      revision: v3.5.0+zmk-fixes
-      clone-depth: 1
-      import:
-        # Only enable most commonly used boards. For less common hardware one
-        # may need to enable additional modules.
-        name-allowlist:
-          - cmsis
-          - hal_nordic
-          - hal_rpi_pico
-          - hal_stm32
-          - lvgl
-          - tinycrypt
+
+#    # Temporarily overload Zephyr until
+#    # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
+#    - name: zephyr
+#      revision: v3.5.0+zmk-fixes
+#      clone-depth: 1
+#      import:
+#        # Only enable most commonly used boards. For less common hardware one
+#        # may need to enable additional modules.
+#        name-allowlist:
+#          - cmsis
+#          - hal_nordic
+#          - hal_rpi_pico
+#          - hal_stm32
+#          - lvgl
+#          - tinycrypt
 
   self:
     path: config
